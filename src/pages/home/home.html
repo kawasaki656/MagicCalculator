@@ -13,7 +13,7 @@
       <div class="line">
         <div class="button">
           <div class="item">
-            <button ion-button icon-left (mousedown)="clear()">
+            <button ion-button icon-left (mouseenter)="clear()">
               C
             </button>
           </div>
@@ -34,7 +34,7 @@
         </div>
         <div class="button">
           <div class="item">
-            <button ion-button icon-left style="padding-top: 0" (mousedown)="back()">
+            <button ion-button icon-left style="padding-top: 0" (mouseenter)="back()">
               <ion-icon name="backspace"></ion-icon>
             </button>
           </div>
@@ -45,29 +45,29 @@
   <div id="buttons">
     <div class="line">
       <div class="button">
-        <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(7)">
+        <div class="item" tapped (mousedown)="addNumber(7)">
+          <button ion-button icon-left>
             7
           </button>
         </div>
       </div>
       <div class="button">
-        <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(8)">
+        <div class="item" tapped (mousedown)="addNumber(8)">
+          <button ion-button icon-left>
             8
           </button>
         </div>
       </div>
       <div class="button">
-        <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(9)">
+        <div class="item" (mousedown)="addNumber(9)">
+          <button ion-button icon-left>
             9
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item system">
-          <button ion-button icon-left (mousedown)="addOperation('÷')">
+          <button ion-button icon-left (mouseenter)="addOperation('÷')">
             ÷
           </button>
         </div>
@@ -77,28 +77,28 @@
     <div class="line">
       <div class="button">
         <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(4)">
+          <button ion-button icon-left (mouseenter)="addNumber(4)">
             4
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(5)">
+          <button ion-button icon-left (mouseenter)="addNumber(5)">
             5
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(6)">
+          <button ion-button icon-left (mouseenter)="addNumber(6)">
             6
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item system">
-          <button ion-button icon-left (mousedown)="addOperation('×')">
+          <button ion-button icon-left (mouseenter)="addOperation('×')">
             ×
           </button>
         </div>
@@ -108,28 +108,28 @@
     <div class="line">
       <div class="button">
         <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(1)">
+          <button ion-button icon-left (mouseenter)="addNumber(1)">
             1
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(2)">
+          <button ion-button icon-left (mouseenter)="addNumber(2)">
             2
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(3)">
+          <button ion-button icon-left (mouseenter)="addNumber(3)">
             3
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item system">
-          <button ion-button icon-left (mousedown)="addOperation('-')">
+          <button ion-button icon-left (mouseenter)="addOperation('-')">
             -
           </button>
         </div>
@@ -139,28 +139,28 @@
     <div class="line">
       <div class="button">
         <div class="item">
-          <button ion-button icon-left (mousedown)="getHint()">
+          <button ion-button icon-left (mouseenter)="getHint()">
             ,
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item">
-          <button ion-button icon-left (mousedown)="addNumber(0)">
+          <button ion-button icon-left (mouseenter)="addNumber(0)">
             0
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item system">
-          <button ion-button icon-left (mousedown)="getResult()">
+          <button ion-button icon-left (mouseenter)="getResult()">
             =
           </button>
         </div>
       </div>
       <div class="button">
         <div class="item system">
-          <button ion-button icon-left (mousedown)="addOperation('+')">
+          <button ion-button icon-left (mouseenter)="addOperation('+')">
             +
           </button>
         </div>

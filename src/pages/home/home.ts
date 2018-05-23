@@ -11,7 +11,9 @@ export class HomePage {
   newOne: string;
   result: string;
   booferResult: string;
-  counter: number;
+  counterHint: number;
+  counterRefresh: number;
+  counterYear: number;
 
   numbers: Array<number>;
   operations: Array<string>;
@@ -22,17 +24,23 @@ export class HomePage {
     this.numbers = [];
     this.operations = [];
 
-    this.counter = 0;
+    this.counterHint = 0;
+    this.counterRefresh = 0;
+    this.counterYear = 0;
   }
 
   addNumber(value) {
     if(this.calculating === "0") {
-      this.calculating = value;
+      this.calculating = "" + value;
     } else {
       this.calculating = this.calculating + value.toString();
     }
 
     this.newOne = this.newOne + value.toString();
+
+    if(value === 0) {
+      this.getYearHint();
+    }
   }
 
   addOperation(value) {
@@ -48,22 +56,34 @@ export class HomePage {
   }
 
   getResult() {
-    this.numbers.push(Number.parseFloat(this.newOne));
-    this.newOne = "";
-    let index = 0;
-    let result = this.numbers[index];
-    index++;
-    for(let operation of this.operations) {
-      switch(operation) {
-        case '+': result += this.numbers[index]; break;
-        case '-': result -= this.numbers[index]; break;
-        case '÷': result /= this.numbers[index]; break;
-        case '×': result *= this.numbers[index]; break;
-      }
+    if(this.newOne) {
+      this.numbers.push(Number.parseFloat(this.newOne));
+      this.newOne = "";
+      let index = 0;
+      let result = this.numbers[index];
       index++;
+      for (let operation of this.operations) {
+        switch (operation) {
+          case '+':
+            result += this.numbers[index];
+            break;
+          case '-':
+            result -= this.numbers[index];
+            break;
+          case '÷':
+            result /= this.numbers[index];
+            break;
+          case '×':
+            result *= this.numbers[index];
+            break;
+        }
+        index++;
+      }
+
+      this.result = "" + result;
     }
 
-    this.result = "" + result;
+    this.refresh();
 
   }
 
@@ -77,17 +97,43 @@ export class HomePage {
       this.calculating = this.calculating.slice(0, -1);
     }
     this.newOne = this.newOne.slice(0, -1);
+
+    if(this.calculating === "") {
+      this.calculating = "0";
+    }
+  }
+
+  refresh() {
+    this.counterRefresh++;
+    if (this.counterRefresh === 5) {
+      this.calculating = "0";
+      this.newOne = "";
+
+      this.numbers = [];
+      this.operations = [];
+
+      this.counterRefresh = 0;
+      this.result = undefined;
+    }
   }
 
   getHint() {
-    this.counter++;
-    if (this.counter === 2) {
+    this.counterHint++;
+    if (this.counterHint === 2 && this.numbers[0]) {
       this.result = "" + this.numbers[0];
       setTimeout(() => {
         this.result = "0";
       }, 1000);
 
-      this.counter = 0;
+      this.counterHint = 0;
+    }
+  }
+
+  getYearHint() {
+    this.counterYear++;
+    if (this.counterYear === 10 && this.numbers[1]) {
+      this.result = "" + this.numbers[1];
+      this.counterYear = 0;
     }
   }
 
