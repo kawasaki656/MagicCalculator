@@ -1,0 +1,119 @@
+page-home {
+  #result {
+    height: 30%;
+    #screen {
+      height: 70%;
+      border-bottom: 2px solid #ededed;
+      font-size: 7vh;
+      color: #343434;
+      z-index: 1;
+      p {
+        display: block;
+        height: 33%;
+        padding-right: 2%;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        text-align: right;
+        overflow: hidden;
+      }
+      #calculating {
+        position: relative;
+        height: 66%;
+        overflow: hidden;
+        .animate {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          transition: .3s ease-out;
+          &.result {
+            top: -100%;
+          }
+          p {
+            &:first-child {
+              height: 100%;
+              &.move {
+                margin-top: -100%;
+              }
+            }
+            &:last-child {
+              height: 50%;
+            }
+          }
+        }
+      }
+    }
+    .system {
+      height: 30%;
+      z-index: 2;
+      background: white;
+      .line {
+        height: 100%;
+        .button {
+          button {
+            padding-top: 15%;
+            background-color: white !important;
+            color: #48abff;
+            font-size: 5vh;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+          .item {
+            box-shadow: none !important;
+          }
+        }
+      }
+    }
+  }
+  #buttons {
+    height: 70%;
+    background: #ededed;
+  }
+
+  .line {
+    &:first-child {
+      .button {
+        padding-top: 2%;
+      }
+    }
+    &:last-child {
+      .button {
+        padding-bottom: 2%;
+      }
+    }
+    height: 25%;
+    .button {
+      display: inline-block;
+      float: left;
+      height: 100%;
+      width: 25%;
+      padding: 1%;
+      box-sizing: border-box;
+      &:first-child {
+        padding-left: 2%;
+      }
+      &:last-child {
+        padding-right: 2%;
+      }
+      .item {
+        width: 100%;
+        height: 100%;
+        &.system {
+          button {
+            background-color: #ffa048;
+          }
+        }
+        button {
+          width: 100%;
+          padding: 0;
+          padding-top: 18%;
+          margin: 0;
+          font-size: 10vh;
+          border-radius: 20%;
+          -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.09);
+        }
+      }
+    }
+  }
+}

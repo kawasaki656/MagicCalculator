@@ -1,0 +1,170 @@
+<ion-content>
+  <div id="result">
+    <div id="screen">
+      <p></p>
+      <div id="calculating">
+        <div class="animate" [ngClass]="{'result': result}">
+          <p>{{calculating}}</p>
+          <p>{{result}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="system">
+      <div class="line">
+        <div class="button">
+          <div class="item">
+            <button ion-button icon-left (mousedown)="clear()">
+              C
+            </button>
+          </div>
+        </div>
+        <div class="button">
+          <div class="item">
+            <button ion-button icon-left>
+              +/-
+            </button>
+          </div>
+        </div>
+        <div class="button">
+          <div class="item">
+            <button ion-button icon-left>
+              %
+            </button>
+          </div>
+        </div>
+        <div class="button">
+          <div class="item">
+            <button ion-button icon-left style="padding-top: 0" (mousedown)="back()">
+              <ion-icon name="backspace"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="buttons">
+    <div class="line">
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(7)">
+            7
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(8)">
+            8
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(9)">
+            9
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item system">
+          <button ion-button icon-left (mousedown)="addOperation('÷')">
+            ÷
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="line">
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(4)">
+            4
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(5)">
+            5
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(6)">
+            6
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item system">
+          <button ion-button icon-left (mousedown)="addOperation('×')">
+            ×
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="line">
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(1)">
+            1
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(2)">
+            2
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(3)">
+            3
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item system">
+          <button ion-button icon-left (mousedown)="addOperation('-')">
+            -
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="line">
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="getHint()">
+            ,
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item">
+          <button ion-button icon-left (mousedown)="addNumber(0)">
+            0
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item system">
+          <button ion-button icon-left (mousedown)="getResult()">
+            =
+          </button>
+        </div>
+      </div>
+      <div class="button">
+        <div class="item system">
+          <button ion-button icon-left (mousedown)="addOperation('+')">
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
